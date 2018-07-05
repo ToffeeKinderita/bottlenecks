@@ -13,19 +13,19 @@ public class GeneralUploadHelper {
         this.driver = driver;
     }
 
-    public void navClickSelectButton(){
+    public void navClickSelectButton() {
         driver.findElement(SELECTBUTTON).click();
     }
 
-    public void navSelectButtonSendKey(String path){
+    public void navSelectButtonSendKey(String path) {
         driver.findElement(SELECTBUTTON).sendKeys(path);
     }
 
-    public void navClickUploadButton(){
+    public void navClickUploadButton() {
         driver.findElement(UPLOADBUTTON).click();
     }
 
-    public String findReturnText(){
+    public String findReturnText() {
         return driver.findElement(By.cssSelector("h3")).getText();
     }
 }

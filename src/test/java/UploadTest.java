@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class UploadTest{
+public class UploadTest {
     private WebDriver driver = new ChromeDriver();
     private GeneralUploadHelper h = new GeneralUploadHelper(driver);
 
@@ -19,22 +19,22 @@ public class UploadTest{
 
     @Test
     public void uploadRobot() {
-        RobotUpload r =new RobotUpload(driver);
+        RobotUpload r = new RobotUpload(driver);
         r.upload();
         String t = h.findReturnText();
-        Assert.assertEquals(t,h.CONFIRMATIONTEXT);
+        Assert.assertEquals(t, h.CONFIRMATIONTEXT);
     }
 
     @Test
-    public void uploadViaInput(){
-        InputUpload i =new InputUpload(driver);
+    public void uploadViaInput() {
+        InputUpload i = new InputUpload(driver);
         i.upload();
         String t = h.findReturnText();
-        Assert.assertEquals(t,h.CONFIRMATIONTEXT);
+        Assert.assertEquals(t, h.CONFIRMATIONTEXT);
     }
 
     @AfterMethod
-    public void teardown () {
+    public void teardown() {
         driver.quit();
     }
 }
